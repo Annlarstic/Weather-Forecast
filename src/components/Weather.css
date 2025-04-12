@@ -1,0 +1,72 @@
+
+
+body, html, .app-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+}
+
+.map-bg {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/83/Equirectangular_projection_SW.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container.sunny::before,
+.app-container.cloudy::before,
+.app-container.rainy::before,
+.app-container.snowy::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.app-container.sunny::before {
+  background-image: url("https://example.com/sunny.jpg");
+}
+
+.app-container.cloudy::before {
+  background-image: url("https://example.com/cloudy.jpg");
+}
+
+.app-container.rainy::before {
+  background-image: url("https://example.com/rainy.jpg");
+}
+
+.app-container.snowy::before {
+  background-image: url("https://example.com/snowy.jpg");
+}
+
+.weather-card {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+}
+
+.city-input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+}
+
+.controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
